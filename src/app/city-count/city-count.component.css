@@ -1,0 +1,14 @@
+mat-card {
+  margin: 0 16px 16px;
+}
+.label {
+  width: 180px;
+  padding-right: 5px;
+  display: inline-block;
+}
+.cityCnt {
+  float: right;
+}
+mat-slider {
+  width: calc(100% - 185px);
+}

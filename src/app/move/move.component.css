@@ -1,0 +1,29 @@
+mat-card {
+  margin: 0 16px 16px;
+  display: flex;
+  align-items: center;
+}
+.moveOrder > * {
+  margin: 0;
+  padding: 0 0 16px;
+}
+.moveOrder > :not(.active) {
+  opacity: .3;
+}
+.timer {
+  width: 100%;
+  text-align: center;
+}
+.currentlyMoving,
+.movementOver {
+  font-size: 26px;
+  line-height: 1.2;
+}
+.countdown {
+  font-size: 60px;
+  line-height: 1.2;
+  padding: 8px 0;
+}
+.controls {
+  display: inline-block;
+}

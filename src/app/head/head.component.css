@@ -1,0 +1,12 @@
+.nav {
+  padding: 16px;
+}
+.nav mat-card-actions {
+  margin-top: -16px;
+}
+.settings {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}

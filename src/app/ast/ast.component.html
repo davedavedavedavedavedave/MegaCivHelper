@@ -1,0 +1,9 @@
+<section *ngIf="gameState">
+  <header></header>
+  <ng-container *ngFor="let participant of gameState.participants; let i = index">
+    <div *ngIf="participant.active" class="participant civ-{{participant.civ.id}}">
+      <div *ngFor="let j of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]" class="pos-{{j}}" [class.active]="participant.astPosition == j" (click)="setParticipantAstPosition(i, j)"></div>
+    </div>
+  </ng-container>
+  <footer></footer>
+</section>

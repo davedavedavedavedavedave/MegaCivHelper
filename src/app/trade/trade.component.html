@@ -1,0 +1,27 @@
+<mat-card *ngIf="gameState">
+  <div class="tradeOrder">
+    <ng-container *ngFor="let participant of participants; let i = index">
+      <h3 *ngIf="participant.cityCnt > 0" [class.active]="gameState.countdownFor <= i">{{ participant.civ.name }} <span class="cityCnt">[ {{ participant.cityCnt }} ]</span></h3>
+    </ng-container>
+  </div>
+  <div class="timer">
+    <div *ngIf="gameState.countdownFor < participants.length" class="currentlyMoving">Trade ended</div>
+    <div *ngIf="gameState.countdownFor >= participants.length" class="movementOver">Trade phase</div>
+    <div *ngIf="gameState.countdownFor < participants.length" class="countdown">0:00.000</div>
+    <div *ngIf="gameState.countdownFor >= participants.length" class="countdown">{{ countdown$ | async }}</div>
+    <div class="controls">
+      <button mat-flat-button color="accent" (click)="resetTimer()">
+        <mat-icon>stop</mat-icon>
+      </button>
+      <button mat-flat-button (click)="resumeTimer()" color="primary" [disabled]="gameState.countdownFor < participants.length || gameState.countdownPaused < 0">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+      <button mat-flat-button (click)="pauseTimer()" color="primary" [disabled]="gameState.countdownFor < participants.length || gameState.countdownPaused >= 0">
+        <mat-icon>pause</mat-icon>
+      </button>
+      <button mat-flat-button (click)="nextTimer()" color="accent" [disabled]="gameState.countdownFor < participants.length">
+        <mat-icon>skip_next</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-card>

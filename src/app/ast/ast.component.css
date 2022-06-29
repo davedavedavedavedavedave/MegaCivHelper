@@ -1,0 +1,65 @@
+section {
+  margin: 0 16px 16px;
+}
+header {
+  padding-top: 44.9259%;
+  background-image: url(assets/ast.jpg);
+  background-size: cover;
+  background-position: 0 9.1452%;
+}
+footer {
+  padding-top: 10.2622%;
+  background-image: url(assets/ast.jpg);
+  background-size: cover;
+  background-position: 0 100%;
+}
+.participant {
+  padding-top: 4.2949%;
+  background-image: url(assets/ast.jpg);
+  background-size: cover;
+  position: relative;
+}
+.participant.civ-1  { background-position: 0 39.3%;  }
+.participant.civ-2  { background-position: 0 42.44%; }
+.participant.civ-3  { background-position: 0 45.58%; }
+.participant.civ-4  { background-position: 0 48.72%; }
+.participant.civ-5  { background-position: 0 51.86%; }
+.participant.civ-6  { background-position: 0 55%;    }
+.participant.civ-7  { background-position: 0 58.14%; }
+.participant.civ-8  { background-position: 0 61.28%; }
+.participant.civ-9  { background-position: 0 64.42%; }
+.participant.civ-10 { background-position: 0 67.56%; }
+.participant.civ-11 { background-position: 0 70.7%;  }
+.participant.civ-12 { background-position: 0 73.84%; }
+.participant.civ-13 { background-position: 0 76.98%; }
+.participant.civ-14 { background-position: 0 80.12%; }
+.participant.civ-15 { background-position: 0 83.26%; }
+.participant.civ-16 { background-position: 0 86.4%;  }
+.participant.civ-17 { background-position: 0 89.54%; }
+.participant.civ-18 { background-position: 0 92.68%; }
+
+.participant > * {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3.85%;
+}
+.participant .pos-0  { left: 22.3%; }
+.participant .pos-1  { left: 26.3%; }
+.participant .pos-2  { left: 30.3%; }
+.participant .pos-3  { left: 34.2%; }
+.participant .pos-4  { left: 38.1%; }
+.participant .pos-5  { left: 42.1%; }
+.participant .pos-6  { left: 46.1%; }
+.participant .pos-7  { left: 50.0%; }
+.participant .pos-8  { left: 53.95%; }
+.participant .pos-9  { left: 57.95%; }
+.participant .pos-10 { left: 61.9%; }
+.participant .pos-11 { left: 65.85%; }
+.participant .pos-12 { left: 69.8%; }
+.participant .pos-13 { left: 73.8%; }
+.participant .pos-14 { left: 77.75%; }
+.participant .pos-15 { left: 82.3%; }
+.participant .active {
+  background: black;
+}

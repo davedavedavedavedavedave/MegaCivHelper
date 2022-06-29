@@ -1,0 +1,16 @@
+ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mat-form-field {
+  width: 100%;
+}
+mat-dialog-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+mat-dialog-content > * {
+  width: 50%;
+  min-width: 200px;
+}

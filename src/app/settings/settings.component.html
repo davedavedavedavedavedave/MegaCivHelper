@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Settings</h2>
+<mat-dialog-content *ngIf="gameState">
+  <ol>
+    <li *ngFor="let participant of gameState.participants; let i = index">
+      <mat-checkbox checked="{{participant.active}}" (change)="setParticipant(i, $event.checked)">{{participant.civ.id}} - {{participant.civ.name}}</mat-checkbox>
+    </li>
+  </ol>
+  <div class="timers">
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>General move time in seconds</mat-label>
+      <input matInput type="number" min="1" step="1" [(ngModel)]="gameState.generalMoveTime" (change)="setGameState()">
+    </mat-form-field>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Per-player move time in seconds</mat-label>
+      <input matInput type="number" min="1" step="1" [(ngModel)]="gameState.playerMoveTime" (change)="setGameState()">
+    </mat-form-field>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Trade time in seconds</mat-label>
+      <input matInput type="number" min="1" step="1" [(ngModel)]="gameState.tradeTime" (change)="setGameState()">
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-flat-button mat-dialog-close color="primary">Close</button>
+  <button mat-flat-button (click)="reset()">Reset &amp; Reload</button>
+</mat-dialog-actions>

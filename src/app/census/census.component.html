@@ -1,0 +1,9 @@
+<mat-card *ngIf="gameState">
+  <button mat-flat-button color="primary" (click)="resetPopulation()">Reset population counts</button>
+  <ng-container *ngFor="let participant of gameState.participants; let i = index">
+    <div *ngIf="participant.active">
+      <h3 class="label" color="accent">{{participant.civ.name}} <span class="populationCnt">[ {{participant.populationCnt}} / -{{55 - participant.populationCnt}} ]</span></h3>      
+      <mat-slider min="12" max="55" step="1" [(ngModel)]="participant.populationCnt" thumbLabel [displayWith]="formatLabel" (change)="setGameState()"></mat-slider>
+    </div>
+  </ng-container>
+</mat-card>

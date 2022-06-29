@@ -1,0 +1,25 @@
+<mat-card *ngIf="gameState">
+  <div class="moveOrder">
+    <h3 *ngFor="let civ of civOrder; let i = index" [class.active]="gameState.countdownFor <= i">{{civ.name}}</h3>
+  </div>
+  <div class="timer">
+    <div *ngIf="gameState.countdownFor < civOrder.length" class="currentlyMoving">{{ gameState.countdownFor < 0 ? 'Public movement' : 'Timer for ' + civOrder[gameState.countdownFor].name }}</div>
+    <div *ngIf="gameState.countdownFor >= civOrder.length" class="movementOver">Movement phase ended</div>
+    <div *ngIf="gameState.countdownFor < civOrder.length" class="countdown">{{ countdown$ | async }}</div>
+    <div *ngIf="gameState.countdownFor >= civOrder.length" class="countdown">0:00.000</div>
+    <div class="controls">
+      <button mat-flat-button color="accent" (click)="resetTimer()">
+        <mat-icon>stop</mat-icon>
+      </button>
+      <button mat-flat-button (click)="resumeTimer()" color="primary" [disabled]="gameState.countdownFor >= civOrder.length || gameState.countdownPaused < 0">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+      <button mat-flat-button (click)="pauseTimer()" color="primary" [disabled]="gameState.countdownFor >= civOrder.length || gameState.countdownPaused >= 0">
+        <mat-icon>pause</mat-icon>
+      </button>
+      <button mat-flat-button (click)="nextTimer()" color="accent" [disabled]="gameState.countdownFor >= civOrder.length">
+        <mat-icon>skip_next</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-card>

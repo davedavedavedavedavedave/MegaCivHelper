@@ -1,0 +1,9 @@
+<mat-card *ngIf="gameState">
+  <button mat-flat-button color="primary" (click)="resetCities()">Reset city counts</button>
+  <ng-container *ngFor="let participant of gameState.participants; let i = index">
+    <div *ngIf="participant.active">
+      <h3 class="label" color="accent">{{participant.civ.name}} <span class="cityCnt">[ {{participant.cityCnt}} ]</span></h3>      
+      <mat-slider min="0" max="9" step="1" [(ngModel)]="participant.cityCnt" thumbLabel (change)="setGameState()"></mat-slider>
+    </div>
+  </ng-container>
+</mat-card>
