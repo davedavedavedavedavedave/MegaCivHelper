@@ -3,19 +3,19 @@ section {
 }
 header {
   padding-top: 44.9259%;
-  background-image: url(assets/ast.jpg);
+  background-image: url(/assets/ast.jpg);
   background-size: cover;
   background-position: 0 9.1452%;
 }
 footer {
   padding-top: 10.2622%;
-  background-image: url(assets/ast.jpg);
+  background-image: url(/assets/ast.jpg);
   background-size: cover;
   background-position: 0 100%;
 }
 .participant {
   padding-top: 4.2949%;
-  background-image: url(assets/ast.jpg);
+  background-image: url(/assets/ast.jpg);
   background-size: cover;
   position: relative;
 }
