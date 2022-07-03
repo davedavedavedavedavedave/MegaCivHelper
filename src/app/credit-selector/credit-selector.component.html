@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Confirm additional credits</h2>
+<div mat-dialog-content>
+  <div class="credits" *ngFor="let color of colors" [class]="color">
+    <button mat-flat-button *ngFor="let i of creditOptions" (click)="setCredit(color, i)" [disabled]="i > data - creditSum + credits[color]" [class.active]="i == credits[color]">{{i}}</button>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button [mat-dialog-close]="credits" color="primary">Confirm</button>
+  <button mat-flat-button (click)="cancel()">Cancel</button>
+</div>

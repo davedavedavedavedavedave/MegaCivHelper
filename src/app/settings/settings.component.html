@@ -3,6 +3,9 @@
   <ol>
     <li *ngFor="let participant of gameState.participants; let i = index">
       <mat-checkbox checked="{{participant.active}}" (change)="setParticipant(i, $event.checked)">{{participant.civ.id}} - {{participant.civ.name}}</mat-checkbox>
+      <mat-radio-group [(ngModel)]="participant.tradeGroup" (change)="setGameState()" [disabled]="!participant.active">
+        <mat-radio-button *ngFor="let tradeGroup of tradeGroups" [value]="tradeGroup">{{ tradeGroup }}</mat-radio-button>
+      </mat-radio-group>
     </li>
   </ol>
   <div class="timers">

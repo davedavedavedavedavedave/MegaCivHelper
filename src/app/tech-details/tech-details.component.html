@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-form-field appearance="fill" color="accent">
+    <mat-label>Budget</mat-label>
+    <input matInput type="number" min="0" step="1" [(ngModel)]="participant.budget" (change)="update()" onfocus="this.select()">
+  </mat-form-field>
+  
+  <div class="techRow" *ngFor="let techRow of techTree">
+    <mat-checkbox *ngFor="let tech of techRow" color="accent" (change)="setTech(tech, $event.checked)" [checked]="hasTech(tech) || wantsTech(tech)" [disabled]="hasTech(tech) || !(canAffordTech(tech) || wantsTech(tech))">{{ tech.name + (hasTech(tech) ? '' : ' (' + getRealTechCost(tech) + ')') }}</mat-checkbox>
+  </div>
+
+  <mat-card-actions>
+    <button mat-flat-button color="primary" (click)="buyTech()">Confirm purchase ({{ budgetSpent }})</button>
+    <button mat-flat-button (click)="resetTech()">Reset tech</button>
+  </mat-card-actions>
+</mat-card>

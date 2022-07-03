@@ -17,7 +17,13 @@ export class GameStateService {
       gameState = JSON.parse(localStorage.getItem('gameState') || '');
     } catch (e) {
       gameState = {
-        participants: CIVS.map(civ => { const participant: Participant = { civ: civ, active: true, astPosition: 0, populationCnt: 12, cityCnt: 0 }; return participant; }),
+        participants: CIVS.map(civ => {
+          const participant: Participant = {
+            civ: civ, active: true, astPosition: 0, populationCnt: 12, cityCnt: 0, tradeGroup: civ.id > 9 ? 'east' : 'west',
+            budget: 0, ownedTechs: [], selectedTechs: [], additionalBlueCredit: 0, additionalRedCredit: 0, additionalGreenCredit: 0, additionalYellowCredit: 0, additionalOrangeCredit: 0
+          };
+          return participant;
+        }),
         turn: 0,
         generalMoveTime: 300,
         playerMoveTime: 180,

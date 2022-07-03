@@ -4,6 +4,7 @@ import { AstComponent } from './ast/ast.component';
 import { CensusComponent } from './census/census.component';
 import { CityCountComponent } from './city-count/city-count.component';
 import { MoveComponent } from './move/move.component';
+import { TechComponent } from './tech/tech.component';
 import { TradeComponent } from './trade/trade.component';
 
 const routes: Routes = [
@@ -11,7 +12,9 @@ const routes: Routes = [
   { path: 'move', component: MoveComponent },
   { path: 'city-count', component: CityCountComponent },
   { path: 'trade', component: TradeComponent },
-  { path: 'AST', component: AstComponent }
+  { path: 'AST', component: AstComponent },
+  { path: 'tech', component: TechComponent },
+  { path: 'tech/:id', component: TechComponent }
 ];
 
 @NgModule({

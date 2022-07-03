@@ -6,8 +6,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatCardModule } from '@angular/material/card'
+import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +25,9 @@ import { CensusComponent } from './census/census.component';
 import { MoveComponent } from './move/move.component';
 import { CityCountComponent } from './city-count/city-count.component';
 import { TradeComponent } from './trade/trade.component';
+import { TechComponent } from './tech/tech.component';
+import { TechDetailsComponent } from './tech-details/tech-details.component';
+import { CreditSelectorComponent } from './credit-selector/credit-selector.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +39,10 @@ import { TradeComponent } from './trade/trade.component';
     CensusComponent,
     MoveComponent,
     CityCountComponent,
-    TradeComponent
+    TradeComponent,
+    TechComponent,
+    TechDetailsComponent,
+    CreditSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +55,11 @@ import { TradeComponent } from './trade/trade.component';
     MatDialogModule,
     MatCheckboxModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatExpansionModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

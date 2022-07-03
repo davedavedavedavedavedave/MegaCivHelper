@@ -1,0 +1,10 @@
+mat-card {
+  margin: 0 16px 16px;
+}
+.techRow {
+  display: flex;
+}
+.techRow > * {
+  width: 100%;
+  max-width: 200px;
+}

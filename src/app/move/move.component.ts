@@ -22,7 +22,11 @@ export class MoveComponent implements OnInit {
   ngOnInit(): void {
     this.gameStateSubscription = this.gameStateService.getGameState().subscribe(gameState => {
       this.gameState = gameState;
-      this.civOrder = this.gameState.participants.filter(participant => participant.active).sort((a, b) => b.populationCnt - a.populationCnt).map(participant => participant.civ);
+      this.civOrder = this.gameState.participants
+                        .filter(participant => participant.active)
+                        .sort((a, b) => b.populationCnt - a.populationCnt)
+                        .sort((a, b) => a.ownedTechs.findIndex(t => t.id == 34) - b.ownedTechs.findIndex(t => t.id == 34))
+                        .map(participant => participant.civ);
     });
     this.countdown$ = this.gameStateService.getCountdown();
   }

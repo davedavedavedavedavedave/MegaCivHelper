@@ -12,6 +12,7 @@ export class SettingsComponent implements OnInit {
   
   gameState?: GameState;
   gameStateSubscription?: Subscription;
+  tradeGroups: string[] = ['west', 'east'];
 
   constructor(private gameStateService: GameStateService) { }
 

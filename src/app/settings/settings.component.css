@@ -14,3 +14,12 @@ mat-dialog-content > * {
   width: 50%;
   min-width: 200px;
 }
+mat-checkbox {
+  width: 180px;
+}
+mat-radio-group {
+  white-space: nowrap;
+}
+mat-radio-button {
+  width: 80px;
+}

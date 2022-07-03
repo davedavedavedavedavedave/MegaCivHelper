@@ -14,6 +14,7 @@ export class TradeComponent implements OnInit {
   gameStateSubscription?: Subscription;
   participants: Participant[] = [];
   countdown$?: Observable<string>;
+  tradeGroups: string[] = [];
 
   constructor(private gameStateService: GameStateService) { }
 
@@ -21,6 +22,7 @@ export class TradeComponent implements OnInit {
     this.gameStateSubscription = this.gameStateService.getGameState().subscribe(gameState => {
       this.gameState = gameState;
       this.participants = this.gameState.participants.filter(participant => participant.active).sort((a, b) => a.cityCnt - b.cityCnt);
+      this.tradeGroups = this.participants.map(p => p.tradeGroup).filter((value, index, self) => self.indexOf(value) === index);
     });
     this.countdown$ = this.gameStateService.getCountdown();
   }

@@ -1,4 +1,5 @@
 import { Civ } from "./civ";
+import { Tech } from "./tech";
 
 export interface Participant {
   civ: Civ;
@@ -6,6 +7,15 @@ export interface Participant {
   astPosition: number;
   populationCnt: number;
   cityCnt: number;
+  tradeGroup: string;
+  ownedTechs: Tech[];
+  selectedTechs: Tech[];
+  budget: number;
+  additionalBlueCredit: number;
+  additionalRedCredit: number;
+  additionalGreenCredit: number;
+  additionalYellowCredit: number;
+  additionalOrangeCredit: number;
 }
 
 export interface GameState {

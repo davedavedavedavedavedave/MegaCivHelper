@@ -1,0 +1,16 @@
+.credits.blue .mat-flat-button.active {
+  background-color: #0372bc;
+}
+.credits.red .mat-flat-button.active {
+  background-color: #e32327;
+}
+.credits.green .mat-flat-button.active {
+  background-color: #48ab43;
+}
+.credits.yellow .mat-flat-button.active {
+  background-color: #f9d414;
+  color: #333;
+}
+.credits.orange .mat-flat-button.active {
+  background-color: #ef9431;
+}

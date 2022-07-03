@@ -1,0 +1,9 @@
+<mat-card *ngIf="gameState">
+  <a mat-flat-button 
+    *ngFor="let participant of gameState.participants; let i = index"
+    [routerLink]="'/tech/' + i"
+    routerLinkActive
+    #route="routerLinkActive"
+    [color]="route.isActive && 'accent'">{{ participant.civ.name }}</a>
+</mat-card>
+<app-tech-details *ngIf="gameState && selectedParticipant != undefined" [participant]="gameState.participants[selectedParticipant]" (change)="setGameState()"></app-tech-details>

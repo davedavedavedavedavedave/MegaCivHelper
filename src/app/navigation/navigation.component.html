@@ -1,7 +1,8 @@
 <nav>
-  <a mat-flat-button routerLink="/census" routerLinkActive="test" #censusRoute="routerLinkActive" [color]="censusRoute.isActive && 'accent'">Census</a>
-  <a mat-flat-button routerLink="/move" routerLinkActive="test" #moveRoute="routerLinkActive" [color]="moveRoute.isActive && 'accent'">Movement</a>
-  <a mat-flat-button routerLink="/city-count" routerLinkActive="test" #cityCountRoute="routerLinkActive" [color]="cityCountRoute.isActive && 'accent'">City Count</a>
-  <a mat-flat-button routerLink="/trade" routerLinkActive="test" #tradeRoute="routerLinkActive" [color]="tradeRoute.isActive && 'accent'">Trade Cards & Trade</a>
-  <a mat-flat-button routerLink="/AST" routerLinkActive="test" #astRoute="routerLinkActive" [color]="astRoute.isActive && 'accent'">A.S.T.</a>
+  <a mat-flat-button routerLink="/census" routerLinkActive #censusRoute="routerLinkActive" [color]="censusRoute.isActive && 'accent'">Census</a>
+  <a mat-flat-button routerLink="/move" routerLinkActive #moveRoute="routerLinkActive" [color]="moveRoute.isActive && 'accent'">Movement</a>
+  <a mat-flat-button routerLink="/city-count" routerLinkActive #cityCountRoute="routerLinkActive" [color]="cityCountRoute.isActive && 'accent'">City Count</a>
+  <a mat-flat-button routerLink="/trade" routerLinkActive #tradeRoute="routerLinkActive" [color]="tradeRoute.isActive && 'accent'">Trade Cards & Trade</a>
+  <a mat-flat-button routerLink="/tech" routerLinkActive #techRoute="routerLinkActive" [color]="techRoute.isActive && 'accent'">Tech</a>
+  <a mat-flat-button routerLink="/AST" routerLinkActive #astRoute="routerLinkActive" [color]="astRoute.isActive && 'accent'">A.S.T.</a>
 </nav>

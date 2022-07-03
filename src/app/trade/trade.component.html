@@ -1,7 +1,11 @@
 <mat-card *ngIf="gameState">
   <div class="tradeOrder">
-    <ng-container *ngFor="let participant of participants; let i = index">
-      <h3 *ngIf="participant.cityCnt > 0" [class.active]="gameState.countdownFor <= i">{{ participant.civ.name }} <span class="cityCnt">[ {{ participant.cityCnt }} ]</span></h3>
+    <ng-container *ngFor="let tradeGroup of tradeGroups; let j = index">
+      <h2>{{ tradeGroup }}</h2>
+      <ng-container *ngFor="let participant of participants; let i = index">
+        <h3 *ngIf="participant.cityCnt > 0 && participant.tradeGroup == tradeGroup" [class.active]="gameState.countdownFor <= i">{{ participant.civ.name }} <span class="cityCnt">[ {{ participant.cityCnt }} ]</span></h3>
+      </ng-container>
+      <mat-divider *ngIf="j < tradeGroups.length - 1"></mat-divider>
     </ng-container>
   </div>
   <div class="timer">
