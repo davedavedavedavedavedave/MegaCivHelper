@@ -38,7 +38,6 @@ export class CreditSelectorComponent implements OnInit {
   setCredit(color: string, credit: number): void {
     this.creditSum += credit - this.credits[color];
     this.credits[color] = credit;
-    console.log(this.creditSum);
   }
 
 }

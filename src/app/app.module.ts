@@ -28,6 +28,7 @@ import { TradeComponent } from './trade/trade.component';
 import { TechComponent } from './tech/tech.component';
 import { TechDetailsComponent } from './tech-details/tech-details.component';
 import { CreditSelectorComponent } from './credit-selector/credit-selector.component';
+import { VictoryPointsComponent } from './victory-points/victory-points.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CreditSelectorComponent } from './credit-selector/credit-selector.compo
     TradeComponent,
     TechComponent,
     TechDetailsComponent,
-    CreditSelectorComponent
+    CreditSelectorComponent,
+    VictoryPointsComponent
   ],
   imports: [
     BrowserModule,

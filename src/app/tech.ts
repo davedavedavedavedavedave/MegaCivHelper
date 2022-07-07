@@ -2,6 +2,7 @@ export interface Tech {
   id: number;
   name: string;
   cost: number;
+  victoryPoints: number;
   blueCredit: number;
   redCredit: number;
   greenCredit: number;

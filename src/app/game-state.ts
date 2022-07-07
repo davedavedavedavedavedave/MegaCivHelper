@@ -4,6 +4,7 @@ import { Tech } from "./tech";
 export interface Participant {
   civ: Civ;
   active: boolean;
+  victoryPoints: number;
   astPosition: number;
   populationCnt: number;
   cityCnt: number;

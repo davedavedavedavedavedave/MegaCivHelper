@@ -25,4 +25,5 @@ body::before {
   background-size: cover;
   background-position: center;
   opacity: .12;
+  z-index: -1;
 }
