@@ -10,6 +10,7 @@ export class GameStateService {
   gameState$: BehaviorSubject<GameState>;
   countdown$: BehaviorSubject<string> = new BehaviorSubject('00:00.000');
   animationFrame: number = -1;
+  alarm: HTMLAudioElement = new Audio('assets/alarm.mp3');
 
   constructor() {
     let gameState: GameState;
@@ -86,6 +87,8 @@ export class GameStateService {
     }
 
     if (countdown <= 0) {
+      this.alarm.currentTime = 0;
+      this.alarm.play();
       gameState.countdownFor += 1;
       if (gameState.countdownFor < participantCnt) {
         gameState.countdownStart = Date.now();
