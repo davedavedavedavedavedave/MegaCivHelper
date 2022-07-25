@@ -20,7 +20,7 @@ export class GameStateService {
       gameState = {
         participants: CIVS.map(civ => {
           const participant: Participant = {
-            civ: civ, active: true, astPosition: 0, populationCnt: 12, cityCnt: 0, tradeGroup: civ.id > 9 ? 'east' : 'west', victoryPoints: 0,
+            civ: civ, active: true, astPosition: 0, populationCnt: 12, cityCnt: 0, tradeGroup: civ.id % 2 ? 'west' : 'east', victoryPoints: 0,
             budget: 0, ownedTechs: [], selectedTechs: [], additionalBlueCredit: 0, additionalRedCredit: 0, additionalGreenCredit: 0, additionalYellowCredit: 0, additionalOrangeCredit: 0
           };
           return participant;
