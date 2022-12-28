@@ -31,7 +31,12 @@ export class GameStateService {
         tradeTime: 600,
         countdownFor: -1,
         countdownStart: Date.now(),
-        countdownPaused: 0
+        countdownPaused: 0,
+        startingCreditBlue: 0,
+        startingCreditGreen: 0,
+        startingCreditYellow: 0,
+        startingCreditRed: 0,
+        startingCreditOrange: 0
       }
     }
     this.gameState$ = new BehaviorSubject(gameState);

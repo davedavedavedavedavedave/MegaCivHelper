@@ -28,4 +28,9 @@ export interface GameState {
   countdownStart: number;
   countdownFor: number;
   countdownPaused: number;
+  startingCreditBlue: number;
+  startingCreditGreen: number;
+  startingCreditYellow: number;
+  startingCreditRed: number;
+  startingCreditOrange: number;
 }

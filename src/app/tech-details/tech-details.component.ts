@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 import { CreditSelectorComponent } from '../credit-selector/credit-selector.component';
-import { Participant } from '../game-state';
+import { GameState, Participant } from '../game-state';
+import { GameStateService } from '../game-state.service';
 import { Tech } from '../tech';
 import { TECHTREE } from '../techs';
 
@@ -21,15 +23,20 @@ export class TechDetailsComponent implements OnInit {
   redCredit: number = 0;
   orangeCredit: number = 0;
   budgetSpent: number = 0;
+  gameState?: GameState;
+  gameStateSubscription?: Subscription;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private gameStateService: GameStateService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.gameStateSubscription = this.gameStateService.getGameState().subscribe(gameState => this.gameState = gameState);
     this.recalcCredits();
     this.recalcBudgetSpent();
   }
   
-  ngOnDestroy(): void { }
+  ngOnDestroy(): void {
+    this.gameStateSubscription?.unsubscribe();
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.recalcCredits();
@@ -50,11 +57,11 @@ export class TechDetailsComponent implements OnInit {
   }
 
   recalcCredits(): void {
-    this.blueCredit = this.participant.ownedTechs.reduce<number>((sum, t2) => sum + t2.blueCredit, 0) + this.participant.additionalBlueCredit;
-    this.yellowCredit = this.participant.ownedTechs.reduce<number>((sum, t2) => sum + t2.yellowCredit, 0) + this.participant.additionalYellowCredit;
-    this.greenCredit = this.participant.ownedTechs.reduce<number>((sum, t2) => sum + t2.greenCredit, 0) + this.participant.additionalGreenCredit;
-    this.redCredit = this.participant.ownedTechs.reduce<number>((sum, t2) => sum + t2.redCredit, 0) + this.participant.additionalRedCredit;
-    this.orangeCredit = this.participant.ownedTechs.reduce<number>((sum, t2) => sum + t2.orangeCredit, 0) + this.participant.additionalOrangeCredit;
+    this.blueCredit = this.participant.ownedTechs.reduce<number>((sum, t2) => sum + t2.blueCredit, 0) + this.participant.additionalBlueCredit + (this.gameState?.startingCreditBlue || 0);
+    this.yellowCredit = this.participant.ownedTechs.reduce<number>((sum, t2) => sum + t2.yellowCredit, 0) + this.participant.additionalYellowCredit + (this.gameState?.startingCreditYellow || 0);
+    this.greenCredit = this.participant.ownedTechs.reduce<number>((sum, t2) => sum + t2.greenCredit, 0) + this.participant.additionalGreenCredit + (this.gameState?.startingCreditGreen || 0);
+    this.redCredit = this.participant.ownedTechs.reduce<number>((sum, t2) => sum + t2.redCredit, 0) + this.participant.additionalRedCredit + (this.gameState?.startingCreditRed || 0);
+    this.orangeCredit = this.participant.ownedTechs.reduce<number>((sum, t2) => sum + t2.orangeCredit, 0) + this.participant.additionalOrangeCredit + (this.gameState?.startingCreditOrange || 0);
   }
 
   getRealTechCost(t: Tech): number {

@@ -21,6 +21,28 @@
       <mat-label>Trade time in seconds</mat-label>
       <input matInput type="number" min="1" step="1" [(ngModel)]="gameState.tradeTime" (change)="setGameState()">
     </mat-form-field>
+    <h3>Starting Credits</h3>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Blue</mat-label>
+      <input matInput type="number" min="0" step="5" [(ngModel)]="gameState.startingCreditBlue" (change)="setGameState()">
+    </mat-form-field>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Green</mat-label>
+      <input matInput type="number" min="0" step="5" [(ngModel)]="gameState.startingCreditGreen" (change)="setGameState()">
+    </mat-form-field>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Yellow</mat-label>
+      <input matInput type="number" min="0" step="5" [(ngModel)]="gameState.startingCreditYellow" (change)="setGameState()">
+    </mat-form-field>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Red</mat-label>
+      <input matInput type="number" min="0" step="5" [(ngModel)]="gameState.startingCreditRed" (change)="setGameState()">
+    </mat-form-field>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Orange</mat-label>
+      <input matInput type="number" min="0" step="5" [(ngModel)]="gameState.startingCreditOrange" (change)="setGameState()">
+    </mat-form-field>
+
   </div>
 </mat-dialog-content>
 <mat-dialog-actions>
